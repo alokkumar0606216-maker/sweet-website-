@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brother Sweets - Premium Indian Sweets</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Brother Sweets Logo" class="logo">
+            <span class="brand-name">Brother Sweets</span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#popular">Sweet Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn" id="mainCartBtn"><i class="fas fa-shopping-cart"></i> Cart <span id="cartBadge">(0)</span></button>
+            <a href="#login" class="login-btn" id="loginBtn">Login / Sign Up</a>
+            
+            <!-- User Profile Dropdown (Hidden by default) -->
+            <div class="user-profile dropdown" id="userProfile" style="display: none; align-items: center; gap: 10px; position: relative; cursor: pointer;">
+                <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 2px 5px rgba(233, 30, 99, 0.3); transition: transform 0.3s;">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span style="font-weight: 600; font-family: var(--font-body); color: var(--primary-color); display: flex; align-items: center; gap: 5px;">My Account <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></span>
+                <!-- Dropdown Menu -->
+                <div class="dropdown-content">
+                    <div class="dropdown-header">
+                        <h4>My Account</h4>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li id="myOrderBtn"><i class="fas fa-box-open"></i> Your Orders</li>
+                        <li id="wishlistBtn"><i class="fas fa-heart"></i> Your Wishlist</li>
+                        <li id="helpBtn"><i class="fas fa-question-circle"></i> Need Help?</li>
+                        <li class="toggle-item">
+                            <span><i class="fas fa-bell"></i> Notifications</span>
+                            <label class="switch">
+                                <input type="checkbox" id="notificationToggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </li>
+                        <li class="toggle-item">
+                            <span><i class="fas fa-moon"></i> Dark Mode</span>
+                            <label class="switch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="dropdown-footer">
+                        <button id="logoutBtn" class="logout-menu-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <img src="images/banner.png" alt="Sweets Banner" class="hero-banner-img">
+        <div class="hero-content">
+            <h1>Taste the Tradition, <br>Experience the Sweetness</h1>
+            <p>Handcrafted Indian sweets made with pure ghee, love, and centuries-old recipes.</p>
+            <a href="#popular" class="cta-btn">Explore Sweets</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="est-badge">
+                    <span>Est.</span>
+                    <h3>1945</h3>
+                </div>
+                <img src="images/banner.png" alt="Our Heritage" class="about-img">
+            </div>
+            <div class="about-content">
+                <h2>A Legacy of Sweetness</h2>
+                <p>Since 1945, Brother Sweets has been crafting the finest traditional Indian delicacies. Our recipes have been passed down through generations, ensuring every bite is a taste of history and love.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-home"></i>
+                        <h4>Homemade Sweets</h4>
+                        <p>Crafted with love, just like at home.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Fresh Ingredients</h4>
+                        <p>100% pure ghee and farm-fresh ingredients.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-truck"></i>
+                        <h4>Delivery Available</h4>
+                        <p>Fast and safe delivery to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Sweets Section -->
+    <section id="popular" class="popular-sweets">
+        <div class="section-header">
+            <h2>Our Popular Sweets</h2>
+            <p>Indulge in our most loved delicacies</p>
+        </div>
+        <div class="sweets-grid">
+            <!-- Card 1 -->
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i>
+                    <img src="images/gulab_jamun.png" alt="Gulab Jamun">
+                    <span class="badge">Bestseller</span>
+                </div>
+                <div class="card-content">
+                    <h3>Gulab Jamun</h3>
+                    <p>Soft, melt-in-mouth dumplings soaked in rose-flavored sugar syrup.</p>
+                    <div class="card-footer">
+                        <span class="price">₹250 / box</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i>
+                    <img src="images/kaju_katli.png" alt="Kaju Katli">
+                </div>
+                <div class="card-content">
+                    <h3>Kaju Katli</h3>
+                    <p>Premium cashew fudge topped with delicate edible silver foil.</p>
+                    <div class="card-footer">
+                        <span class="price">₹800 / kg</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i>
+                    <img src="images/rasgulla.png" alt="Rasgulla">
+                    <span class="badge fresh">Fresh</span>
+                </div>
+                <div class="card-content">
+                    <h3>Spongy Rasgulla</h3>
+                    <p>Classic Bengali sweet, spongy cottage cheese balls in light syrup.</p>
+                    <div class="card-footer">
+                        <span class="price">₹200 / box</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- New Cards -->
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/imarti.png" alt="Imarti"></div>
+                <div class="card-content">
+                    <h3>Imarti</h3><p>Traditional deep-fried sweet soaked in sugar syrup.</p>
+                    <div class="card-footer"><span class="price">₹300 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/mishti_doi.png" alt="Mishti Doi"></div>
+                <div class="card-content">
+                    <h3>Mishti Doi (West Bengal)</h3><p>Classic Bengali sweetened curd served in earthen pots.</p>
+                    <div class="card-footer"><span class="price">₹150 / pot</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/jalebi.png" alt="Jalebi"></div>
+                <div class="card-content">
+                    <h3>Crispy Jalebi (North India)</h3><p>Hot and crispy golden spirals of sweetness.</p>
+                    <div class="card-footer"><span class="price">₹250 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/laddu.png" alt="Laddu"></div>
+                <div class="card-content">
+                    <h3>Motichoor Laddu</h3><p>Delicious round laddus made of tiny gram flour pearls.</p>
+                    <div class="card-footer"><span class="price">₹400 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/mysore_pak.png" alt="Mysore Pak"></div>
+                <div class="card-content">
+                    <h3>Mysore Pak (Karnataka)</h3><p>Rich and porous sweet made from generous amounts of pure ghee.</p>
+                    <div class="card-footer"><span class="price">₹700 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/peda.png" alt="Peda"></div>
+                <div class="card-content">
+                    <h3>Mathura Peda (Uttar Pradesh)</h3><p>Traditional soft and caramelized milk fudge.</p>
+                    <div class="card-footer"><span class="price">₹500 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/sandesh.png" alt="Sandesh"></div>
+                <div class="card-content">
+                    <h3>Sandesh (West Bengal)</h3><p>Exquisite Bengali sweet made from fresh cottage cheese.</p>
+                    <div class="card-footer"><span class="price">₹600 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/soan_papdi.png" alt="Soan Papdi"></div>
+                <div class="card-content">
+                    <h3>Soan Papdi</h3><p>Flaky, melt-in-the-mouth sweet garnished with almonds.</p>
+                    <div class="card-footer"><span class="price">₹350 / box</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/rasmalai.png" alt="Rasmalai"></div>
+                <div class="card-content">
+                    <h3>Rasmalai</h3><p>Soft cottage cheese discs floating in thickened, sweetened milk.</p>
+                    <div class="card-footer"><span class="price">₹40 / piece</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/ghevar.png" alt="Ghevar"></div>
+                <div class="card-content">
+                    <h3>Ghevar (Rajasthan)</h3><p>Traditional Rajasthani disc-shaped sweet topped with rabri.</p>
+                    <div class="card-footer"><span class="price">₹800 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/gujiya.png" alt="Gujiya"></div>
+                <div class="card-content">
+                    <h3>Gujiya</h3><p>Crispy deep-fried pastry stuffed with sweet khoya and dry fruits.</p>
+                    <div class="card-footer"><span class="price">₹450 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/modak.png" alt="Modak"></div>
+                <div class="card-content">
+                    <h3>Ukadiche Modak (Maharashtra)</h3><p>Steamed dumpling stuffed with coconut and jaggery.</p>
+                    <div class="card-footer"><span class="price">₹30 / piece</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/thekua_real.jpg" alt="Thekua"></div>
+                <div class="card-content">
+                    <h3>Thekua (Bihar)</h3><p>A highly famous and must-try traditional dish of Bihar! Rustic deep-fried cookies made with pure jaggery.</p>
+                    <div class="card-footer"><span class="price">₹450 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="card-img-container"><i class="far fa-heart wishlist-icon"></i><img src="images/chhena_poda_real.jpg" alt="Chhena Poda"></div>
+                <div class="card-content">
+                    <h3>Chhena Poda (Odisha)</h3><p>Baked cottage cheese cake with a caramelized crust.</p>
+                    <div class="card-footer"><span class="price">₹650 / kg</span><button class="add-to-cart"><i class="fas fa-plus"></i> Add</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="offers-section">
+        <div class="offers-container">
+            <div class="offer-content">
+                <h2>Festive Special Offer!</h2>
+                <h3>Get 20% OFF on all Mixed Sweet Boxes</h3>
+                <p>Use code: <strong>SWEET20</strong> at checkout.</p>
+                <div class="countdown" id="countdown">
+                    <div class="time-box"><span id="days">02</span><span>Days</span></div>
+                    <div class="time-box"><span id="hours">12</span><span>Hours</span></div>
+                    <div class="time-box"><span id="mins">45</span><span>Mins</span></div>
+                    <div class="time-box"><span id="secs">30</span><span>Secs</span></div>
+                </div>
+                <button class="cta-btn secondary">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Brother Sweets Logo" class="footer-logo">
+                <p>Bringing sweetness to your life since 1945.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#popular">Products</a></li>
+                    <li><a href="#offers">Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p style="align-items: flex-start;">
+                    <i class="fas fa-map-marker-alt" style="margin-top: 5px;"></i> 
+                    <span style="line-height: 1.8;">
+                        123 Sweet Lane, Food City Kolkata India
+                        <a href="https://www.google.com/maps/search/?api=1&query=22.623384,88.40361" target="_blank" style="color: var(--secondary-color); font-size: 0.85rem; margin-left: 8px; text-decoration: none; background: rgba(255,152,0,0.1); padding: 4px 10px; border-radius: 20px; white-space: nowrap; display: inline-block; transition: all 0.3s;">
+                            <i class="fas fa-map-location-dot"></i> View on Map
+                        </a>
+                    </span>
+                </p>
+                <p>
+                    <a href="https://wa.me/917322862141" target="_blank" style="color: #25D366; font-size: 1.2rem; margin-right: 10px;" title="Chat on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <i class="fas fa-phone"></i> <a href="tel:+917322862141" style="color: #ccc;">+91 7322862141</a>
+                </p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:alokkumar0606216@gmail.com" style="color: #ccc;">alokkumar0606216@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brother Sweets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Order History Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>My Order History</h2>
+            <div class="order-list" id="orderList">
+                <!-- Orders will be injected here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeCartModal">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-list" id="cartList">
+                <!-- Cart Items injected here -->
+            </div>
+            <div class="cart-footer">
+                <div class="bill-details" id="billDetails" style="display: none; text-align: left; margin-bottom: 15px;">
+                    <h4 style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Bill Details</h4>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: #555;"><span>Subtotal</span><span id="billSubtotal">₹0</span></div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: #555;"><span>Delivery Fee</span><span id="billDelivery">₹50</span></div>
+                    <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; color: var(--primary-color);"><span>Grand Total</span><span id="billTotal">₹0</span></div>
+                </div>
+                <h3 id="emptyCartTotal">Total: <span>₹0</span></h3>
+                <button class="cta-btn" id="checkoutBtn" style="margin-top: 15px; width: 100%;">Select Payment Option</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closePaymentModal">&times;</span>
+            <h2>Select Payment Option</h2>
+            <div class="payment-options" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px; text-align: left;">
+                <label style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--primary-color)'" onmouseout="this.style.borderColor='#ddd'">
+                    <input type="radio" name="payment" value="upi" checked>
+                    <i class="fas fa-qrcode" style="color: var(--primary-color); font-size: 1.5rem; margin-left: 10px;"></i>
+                    <span style="font-weight: 600;">UPI (GPay, PhonePe, Paytm)</span>
+                </label>
+                <label style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--primary-color)'" onmouseout="this.style.borderColor='#ddd'">
+                    <input type="radio" name="payment" value="card">
+                    <i class="fas fa-credit-card" style="color: var(--primary-color); font-size: 1.5rem; margin-left: 10px;"></i>
+                    <span style="font-weight: 600;">Credit / Debit Card</span>
+                </label>
+                <label style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.3s;" onmouseover="this.style.borderColor='var(--primary-color)'" onmouseout="this.style.borderColor='#ddd'">
+                    <input type="radio" name="payment" value="cod">
+                    <i class="fas fa-money-bill-wave" style="color: var(--primary-color); font-size: 1.5rem; margin-left: 10px;"></i>
+                    <span style="font-weight: 600;">Cash on Delivery</span>
+                </label>
+            </div>
+            <button class="cta-btn" id="confirmPaymentBtn" style="margin-top: 25px; width: 100%;">Confirm Order</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close-btn" id="closeLoginModal">&times;</span>
+            <h2 style="margin-bottom: 20px;">Login / Sign Up</h2>
+            <p style="margin-bottom: 25px; color: #666;">Enter your mobile number to continue</p>
+            
+            <div class="phone-input-group" style="display: flex; align-items: center; border: 2px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 25px; transition: border-color 0.3s;" onfocusin="this.style.borderColor='var(--primary-color)'" onfocusout="this.style.borderColor='#ddd'">
+                <span class="country-code" style="background: #f5f5f5; padding: 12px 15px; font-weight: 600; color: #555; border-right: 1px solid #ddd;">+91</span>
+                <input type="tel" id="mobileNumber" placeholder="Enter 10 digit number" pattern="[0-9]{10}" maxlength="10" style="flex: 1; border: none; padding: 12px 15px; font-size: 1.1rem; outline: none; width: 100%;">
+            </div>
+            
+            <button class="cta-btn" id="loginContinueBtn" style="width: 100%;">Continue</button>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeWishlistModal">&times;</span>
+            <h2 style="margin-bottom: 20px;">Your Wishlist <i class="fas fa-heart" style="color: var(--primary-color);"></i></h2>
+            <div class="cart-list" id="wishlistList" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Wishlist Items injected here -->
+            </div>
+            <h3 id="emptyWishlistText" style="text-align: center; color: #888; margin-top: 20px;">Your wishlist is empty.</h3>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; padding: 0; overflow: hidden; border-radius: 12px; display: flex; flex-direction: column; height: 500px;">
+            <div style="background: linear-gradient(135deg, var(--primary-color), #c2185b); padding: 15px 20px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1.2rem; color: white;"><i class="fas fa-headset"></i> Brother Sweets Support</h3>
+                <span class="close-btn" id="closeChatModal" style="color: white; top: auto; right: auto; position: static; font-size: 1.5rem;">&times;</span>
+            </div>
+            
+            <div id="chatBox" style="flex: 1; padding: 20px; background: #f9f9f9; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;">
+                <div style="align-self: flex-start; background: white; padding: 10px 15px; border-radius: 15px; border-bottom-left-radius: 0; box-shadow: var(--shadow-light); max-width: 80%;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #333;">Hi there! 👋 Welcome to Brother Sweets. How can we help you today?</p>
+                </div>
+            </div>
+            
+            <div style="padding: 15px; background: white; border-top: 1px solid #eee; display: flex; gap: 10px;">
+                <input type="text" id="chatInput" placeholder="Type your message..." style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 20px; outline: none; color: #333;">
+                <button id="sendChatBtn" style="background: var(--primary-color); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
